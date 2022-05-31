@@ -56,7 +56,16 @@ class BinanceApi {
       return data
         .sort((a, b) => a[2].localeCompare(b[2]))
         .sort((a, b) => a[1].localeCompare(b[1]))
-        .sort((a, b) => a[3].localeCompare(b[3]));
+        .sort((a, b) => a[3].localeCompare(b[3]))
+        .map((row) => [
+          row[0],
+          row[1],
+          row[2],
+          row[3] === 'BUY' ? 'Покупка' : row[3] === 'SELL' ? 'Продажа' : '',
+          row[4].replace(/\./, ','),
+          row[5].replace(/\./, ','),
+          row[6].replace(/\./, ','),
+        ]);
     } catch (e) {
       console.log(e.message);
     }
