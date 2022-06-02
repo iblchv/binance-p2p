@@ -25,7 +25,7 @@ class BinanceApi {
         const tradeType = item['adv']['tradeType'];
         const price = item['adv']['price'];
         const minTransferValue = item['adv']['minSingleTransAmount'];
-        const maxTransferValue = item['adv']['maxSingleTransAmount'];
+        const maxTransferValue = item['adv']['dynamicMaxSingleTransAmount'];
         return [
           name,
           asset,

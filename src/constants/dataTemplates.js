@@ -6,6 +6,8 @@ const BANKS = [
   'HomeCreditBank',
   'RussianStandardBank',
   'MTSBank',
+  'QIWI',
+  'YandexMoney',
 ];
 
 const DATA_TEMPLATES = [
