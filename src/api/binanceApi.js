@@ -26,6 +26,7 @@ class BinanceApi {
         const price = item['adv']['price'];
         const minTransferValue = item['adv']['minSingleTransAmount'];
         const maxTransferValue = item['adv']['dynamicMaxSingleTransAmount'];
+        const maxSingleTransQuantity = item['adv']['dynamicMaxSingleTransQuantity'];
         return [
           name,
           asset,
@@ -34,6 +35,7 @@ class BinanceApi {
           price,
           minTransferValue,
           maxTransferValue,
+          maxSingleTransQuantity,
         ];
       });
     } catch (e) {
@@ -65,6 +67,7 @@ class BinanceApi {
           row[4].replace(/\./, ','),
           row[5].replace(/\./, ','),
           row[6].replace(/\./, ','),
+          row[7].replace(/\./, ','),
         ]);
     } catch (e) {
       console.log(e.message);

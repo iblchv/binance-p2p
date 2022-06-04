@@ -27,6 +27,7 @@ class GoogleController {
       await sheets.clear({ spreadsheetId, range });
       await sheets.update({ spreadsheetId, range, values });
       res.status(200).json({ success: true });
+      // res.status(200).json({ values });
     } catch (error) {
       console.log({ success: false, error });
     }
